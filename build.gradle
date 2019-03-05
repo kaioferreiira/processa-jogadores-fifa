@@ -1,0 +1,33 @@
+plugins {
+	id 'org.springframework.boot' version '2.0.5.RELEASE'
+	id 'java'
+}
+
+apply plugin: 'io.spring.dependency-management'
+
+group = 'br.com.processajogadores'
+version = '1.0.0-SNAPSHOT'
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+//	implementation 'org.springframework.boot:spring-boot-starter-data-mongodb'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	
+	runtimeOnly 'org.springframework.boot:spring-boot-devtools'
+	runtimeOnly 'com.h2database:h2'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+	compile group: 'org.projectlombok', name: 'lombok', version: '1.18.4'
+	compile group: 'org.apache.commons', name: 'commons-csv', version: '1.6'
+
+	//swagger
+	compile('io.springfox:springfox-swagger2:2.8.0')
+	compile('io.springfox:springfox-swagger-ui:2.8.0')
+
+}
